@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <table >
+            <th >
+                <td style="padding: 8px;">
+                    <img src="{{list['photo'][1]}}" alt="" style="width: 40px; border-radius: 50%; " >
+                </td>
+                <td style="">
+                    <h3><strong>Chat</strong></h3>
+                </td>
+            </th>
+        </table>
+
+
+        </div>
+        <form action="/action_page.php" >
+            <input type="text" placeholder="Search">
+            <input type="submit" value="Submit">
+        </form>
+        <div class="listArea" style="margin:10px">
+            {% for i in list %}
+                <a href="{{list['key'][loop.index0]}}">
+                  <div style="display: block;">
+                      <img src="{{list['photo'][loop.index0]}}" alt="" style="width: 50px">
+                     {{list['text'][loop.index0]}}
+                  </div>
+                </a>
+            {%endfor%}
+        </div>
+
+        <input type="button" value="Get Value" onclick="getValue()"/>
+        <script type="text/javascript">
+            $(".myBox").click(function() {
+            window.location = $(this).find("a").attr("href");
+            return false;
+            });
+        </script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </body>
+</html>
